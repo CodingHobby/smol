@@ -1,0 +1,15 @@
+{
+  "name": "smoldb",
+  "version": "0.0.0",
+  "description": "A very smol database",
+  "main": "smol.js",
+  "scripts": {
+    "test": "jest ."
+  },
+  "author": "Corrado Canepari <caneparicorrado@outlook.it>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  },
+  "repository": "https://github.com/CodingHobby/smol"
+}
