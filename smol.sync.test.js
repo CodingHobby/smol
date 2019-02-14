@@ -7,7 +7,7 @@ beforeEach(() => {
 	db = new smol.db('db').init()
 })
 
-afterEach(() => {
+afterAll(() => {
 	fs.unlinkSync('./db.json')
 	db = null
 })
@@ -18,7 +18,7 @@ test('Creates a json file', () => {
 	}).not.toThrow()
 })
 
-describe('Write', () => {
+describe('Set', () => {
 	test('Puts data in a JSON file', () => {
 		expect(db.setSync('/users/corrado', 'me')).toEqual({
 			users: {

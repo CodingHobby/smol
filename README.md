@@ -21,17 +21,25 @@ After you require `Smol`, you'll need to create and initialize your `db` object:
 const smol = require('smol')
 let db = new smol.db('myCoolDatabase').init()
 ```
-At this point you can start storing data in it (for now the library only supports syncronous operations):
+At this point you can start storing data in it (these operations can be done both sincronously and *asyncronously*, through `set`):
 ```
 db.setSync('/users/john', 'John Doe')
+
+/* or
+db.set('/users/john', 'John Doe').then(data => ...)
+*/
 ```
 The result will be
 ```
 {
-	users: {'John': 'John Doe'}
+  users: {'John': 'John Doe'}
 }
 ```
-To read the data stored in the db you can use the `readSync` function, which works just the same way:
+To read the data stored in the db you can use the `readSync` (or the *async* `read`) function, which works just the same way:
 ```
 let john = db.readSync('/users/john') // john = 'John Doe'
+
+/* or
+db.read('/users/john').then(john => ...)
+*/
 ```
